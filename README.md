@@ -1,10 +1,11 @@
-# Web3Modal 
+# web3modal-vue 
 
 A dapp demo use walletconnect for vue
 
-<!-- - [ ] Transfer
-  - [x] ui style
-  - [ ] Transfer assets from bsc to eth, No commissions!! -->
+![](https://img.shields.io/website?url=http%3A%2F%2Fweb3modal-vue.netlify.app)
+![](https://img.shields.io/netlify/9c328b06-9ebd-4f15-8a4f-66c37399e9bc)
+  
+[web3modal-vue.netlify.app](https://web3modal-vue.netlify.app/)
 
 ## Start
 
