@@ -1,4 +1,4 @@
-name: Vite with Deploy
+name: Build
 
 on:
   push:
@@ -36,9 +36,9 @@ jobs:
           pnpm run build
           cp dist/index.html dist/404.html # vue-router history mode
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.5
-        with:
-          # folder dist/* -> branch gh-pages /
-          branch: gh-pages
-          folder: dist
+      # - name: Deploy 🚀
+      #   uses: JamesIves/github-pages-deploy-action@4.1.5
+      #   with:
+      #     # folder dist/* -> branch gh-pages /
+      #     branch: gh-pages
+      #     folder: dist

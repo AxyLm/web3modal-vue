@@ -1,6 +1,5 @@
 import { defineConfig, UserConfigExport, UserConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import VueI18n from '@intlify/vite-plugin-vue-i18n';
 import * as path from 'path';
 import Icons from 'unplugin-icons/vite';
 import Components from 'unplugin-vue-components/vite';
@@ -62,11 +61,11 @@ const userConfig: UserConfig = {
 
   plugins: [
     vue(),
-    VueI18n({
-      runtimeOnly: true,
-      compositionOnly: true,
-      include: [path.resolve(__dirname, 'locales/**')],
-    }),
+    // VueI18n({
+    //   runtimeOnly: true,
+    //   compositionOnly: true,
+    //   include: [path.resolve(__dirname, 'locales/**')],
+    // }),
     Icons({
       scale: 1.2,
       autoInstall: true,
