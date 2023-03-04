@@ -23,16 +23,30 @@ pnpm dev
 pnpm build
 ```
 
-### Deploy on you git pages
 
-Go to [GitHub Pages](https://github.com/AxyLm/vite-web3-start/settings/pages)
+```
+// !!! vite.config.ts
 
-1. Under "Build and deployment", under "Source", select **Deploy from a branch**.
-2. Under "Build and deployment", under "Branch", select **gh-pages**
+import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill';
+...
+export default defineConfig(({ command }) => {
+  if (command === 'serve') {
+    userConfig.define = {
+      process: process,
+    };
+    userConfig.resolve = {
+      ...userConfig.resolve,
+      alias: {
+        ...userConfig.resolve?.alias,
+        util: 'rollup-plugin-node-polyfills/polyfills/util',
+        tty: 'rollup-plugin-node-polyfills/polyfills/tty',
+      },
+    };
+  }
+  return userConfig;
+});
 
-- This option can be modified in [action.yml](./.github/workflows/action.yml#L35-L20) on line 35
-
-3. Click **Save**.
+```
 
 ## LICENSE
 
